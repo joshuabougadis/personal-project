@@ -1,0 +1,186 @@
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <link rel="stylesheet" href="styly.css">
+    <title>
+        Vertex Form 
+    </title>
+    
+    <style>
+    
+    
+    </style>
+    
+</head>  
+<body>
+    
+    <ul>
+        <li><a href="index.html">Standard form</a></li>
+        <li><a class="active" href="vertex.html">Vertex Form</a></li>
+        <li><a href="factored.html">Factored Form</a></li>
+     </ul>
+    
+    <br>
+    
+    <center><h1 class = "texto"> Solve Quadratic Equations Using Expanding from Vertex Form</h1></center>
+    <center><h4 class = "texto"> By Joshua Bougadis Y10</h4></center>
+    
+    <br>
+    
+    <center><h2 class = texto3>Within the form:</h2></center>
+    <center><h1> y = <span style="color:red">a</span>(x - <span style="color:blue">h</span>)<sup>2</sup> + <span style="color:yellow">k</span></h1></center>
+    
+    <br><br>
+    
+        <center><div>
+        <label class = "texto5" id = "label1">Enter the "<span style="color:red">a</span>" value</label>
+        <input style="font-size:20px" id = "input1"  required minlength="1" maxlength="6" size="8">
+        </div></center>
+    
+        <br>
+
+        <center><div>
+        <label class = "texto5" id = "label2">Enter the "<span style="color:blue">h</span>" value</label>
+        <input style="font-size:20px" id = "input2"  required minlength="1" maxlength="6" size="8">
+        </div></center>
+    
+        <br>
+    
+        <center><div>
+        <label class = "texto5" id = "label3">Enter the "<span style="color:yellow">k</span>" value</label>
+        <input style="font-size:20px" id = "input3"  required minlength="1" maxlength="6" size="8">
+        </div></center>
+    
+        <br>
+    
+        <center><table>
+        <tr>
+        <td>
+        <center><input type="submit" onclick = "functiono()" id = "submit" value="Calculate x values"></center>  
+        </td>
+        <td>
+        <center><input type="submit" onclick = "functiona()" id = "submit" value="Calculate standard form"></center>
+        </td>
+        </tr>
+        </table></center>
+    
+        <br><br>
+        
+        <center><table>
+        <tr>
+        <td>
+        <center><h3 style = "" class = texto id = "thingy1"> The axis of symmetry is: </h3></center>  
+        </td>
+        <td>
+         <center><h3 style = "" class = texto id = "texts1"></h3></center>   
+        </td>
+        </tr>
+        </table></center>
+    
+        <br>
+    
+        <center><table>
+        <tr>
+        <td>
+        <center><h3 style = "" class = texto id = "thingy2"> The vertex is: </h3></center>  
+        </td>
+        <td>
+         <center><h3 style = "" class = texto id = "texts4"></h3></center>   
+        </td>
+        </tr>
+        </table></center>
+    
+        <br>
+        
+        <center><table>
+        <tr>
+        <td>
+        <center><h3 style = "" class = texto id = "thingy3"> When solving for f(x) = 0, the first possible (x) value is: </h3></center>  
+        </td>
+        <td>
+         <center><h3 style = "" class = texto id = "texts2"></h3></center>   
+        </td>
+        </tr>
+        </table></center>
+    
+        <br>
+    
+        <center><table>
+        <tr>
+        <td>
+        <center><h3 style = "" class = texto id = "thingy4"> When solving for f(x) = 0, the second possible (x) value is:</h3></center>  
+        </td>
+        <td>
+         <center><h3 style = "" class = texto id = "texts3"></h3></center>   
+        </td>
+        </tr>
+        </table></center>
+    
+        <br>
+    
+        <center><table>
+        <tr>
+        <td>
+        <center><h3 style = "" class = texto id = "thingy5"> The factored form is: </h3></center>  
+        </td>
+        <td>
+         <center><h3 style = "" class = texto id = "texts5"></h3></center>   
+        </td>
+        </tr>
+        </table></center>
+    
+<script>
+    function functiono(){
+            var a1 = document.getElementById("input1").value;
+            var h1 = document.getElementById("input2").value;
+            var k1 = document.getElementById("input3").value;
+            document.getElementById("thingy1").innerHTML = "The axis of symmetry is:";
+            document.getElementById("thingy2").innerHTML = "The vertex is:";
+            document.getElementById("thingy3").innerHTML = "When solving for f(x) = 0, the first possible (x) value is:";
+            document.getElementById("thingy4").innerHTML = "When solving for f(x) = 0, the second possible (x) value is:";
+            document.getElementById("thingy5").innerHTML = "The factored form is:";
+            document.getElementById("texts1").innerHTML = "x = " + h1;
+            document.getElementById("texts4").innerHTML = "(" + h1 + "," + k1 + ")";
+            var step1 = ((-1 * k1)/Math.abs(a1));
+            var step1 = Math.sqrt(step1);
+            var step2 = (parseFloat(h1) + parseFloat(step1)); 
+            var step3 = Math.round(100 * step2)/100;
+            var xp1 = step3;
+            document.getElementById("texts2").innerHTML = xp1;
+            var qstep1 = (parseFloat(h1) - parseFloat(step1));
+            var xp2 = Math.round(100*qstep1)/100;
+            document.getElementById("texts3").innerHTML = xp2;
+            document.getElementById("texts5").innerHTML = a1 + "(x - " + xp1 + ")(x - " + xp2 + ")";
+    }
+    
+    function functiona(){
+        var a2 = document.getElementById("input1").value;
+        var h2 = document.getElementById("input2").value;
+        var k2 = document.getElementById("input3").value;
+        document.getElementById("thingy1").innerHTML = "The standard form is:";
+        document.getElementById("thingy2").innerHTML = "The discriminant is:";
+        document.getElementById("thingy3").innerHTML = "In consideration of discriminant:";
+        document.getElementById("thingy4").innerHTML = "The y-intercept is:";
+        document.getElementById("thingy5").innerHTML = "";
+        document.getElementById("texts5").innerHTML = "";
+        var value1 = a2 * h2 * 2 * -1
+        var value2 = parseFloat(a2 * h2 * h2) + parseFloat(k2)
+        document.getElementById("texts1").innerHTML = "y = " + a2 + "x<sup>2</sup> + " + value1 + "x + " + value2;
+        var a3 = parseFloat(a2)
+        var b1 = parseFloat(value1)
+        var c1 = parseFloat(value2)
+        var discriminant = (Math.pow(b1,2) - (4*a3*c1));
+        document.getElementById("texts4").innerHTML = discriminant;
+        if(discriminant > 0){
+            document.getElementById("texts2").innerHTML = "there are two real roots";
+        } else if(discriminant == 0){
+            document.getElementById("texts2").innerHTML = "there is one real root";
+        } else if (discriminant < 0){
+            document.getElementById("texts2").innerHTML = "there are no real roots";
+        }
+        document.getElementById("texts3").innerHTML = parseFloat(c1);
+    }
+    
+</script>
+</body>
+</html>
